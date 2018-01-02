@@ -23,4 +23,10 @@ public class CubeController : MonoBehaviour {
                         Destroy (gameObject);
                 }
         }
+        //キューブ同士またはキューブと地面が衝突したときに効果音を再生
+        void OnCollisionEnter2D(Collision2D other){
+                if(other.gameObject.tag == "blockTag" || other.gameObject.tag == "groundTag"){
+                        GetComponent<AudioSource>().Play();
+                }
+        }
 }
